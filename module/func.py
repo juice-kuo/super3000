@@ -45,9 +45,12 @@ def sendConfirm(event):  #董監事資料
 
 def sendCarousel(event):  #經濟部商業司相關網站
     try:
-        message = TextSendMessage(
-            text = '利害關係人相關網頁'
-            text = 'https://corp.104.com.tw/indexdda3.html?m=article&mid=102'
+        message = [
+            TextSendMessage(
+                text = '利害關係人相關網頁'
+        )
+            TextSendMessage(
+                text = 'https://corp.104.com.tw/indexdda3.html?m=article&mid=102'
         )
         
         line_bot_api.reply_message(event.reply_token,message)
