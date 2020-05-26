@@ -35,7 +35,7 @@ def sendConfirm(event):  #董監事資料
         message = TemplateSendMessage(
             alt_text='董監事資料',
             template=ConfirmTemplate(
-                uri='https://super3000.herokuapp.com/listall/'
+                url='https://super3000.herokuapp.com/listall/'
             
             )
         )
@@ -47,7 +47,7 @@ def sendCarousel(event):  #經濟部商業司相關網站
     try:
         message = TextSendMessage(
             text = '利害關係人相關網頁'
-            uri='https://corp.104.com.tw/indexdda3.html?m=article&mid=102'
+            url='https://corp.104.com.tw/indexdda3.html?m=article&mid=102'
         )
         
         line_bot_api.reply_message(event.reply_token,message)
