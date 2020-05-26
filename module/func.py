@@ -30,18 +30,6 @@ def sendButton(event):  #關於我們
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendConfirm(event):  #董監事資料
-    try:
-        message = TemplateSendMessage(
-            alt_text='董監事資料',
-            template=ConfirmTemplate(
-                text='https://super3000.herokuapp.com/listall/'
-            
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
 def sendCarousel(event):  #經濟部商業司相關網站
     try:
