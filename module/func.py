@@ -5,28 +5,24 @@ from linebot.models import TextSendMessage, TemplateSendMessage, ConfirmTemplate
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 
-def sendButton(event):  #按鈕樣版
+def sendButton(event):  #關於我們
     try:
         message = TemplateSendMessage(
-            alt_text='按鈕樣板',
+            alt_text='關於我們',
             template=ButtonsTemplate(
                 thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',  #顯示的圖片
-                title='按鈕樣版示範',  #主標題
+                title='關於我們',  #主標題
                 text='請選擇：',  #副標題
                 actions=[
-                    MessageTemplateAction(  #顯示文字計息
-                        label='文字訊息',
-                        text='@購買披薩'
+                    URITemplateAction(  #開啟網頁
+                        label='銘傳大學網站',
+                        uri='https://web.mcu.edu.tw/'
                     ),
                     URITemplateAction(  #開啟網頁
-                        label='連結網頁',
-                        uri='http://www.e-happy.com.tw'
+                        label='應用統計與資料科學學系網站',
+                        uri='http://web.asis.mcu.edu.tw/zh-hant'
                     ),
-                    PostbackTemplateAction(  #執行Postback功能,觸發Postback事件
-                        label='回傳訊息',  #按鈕文字
-                        #text='@購買披薩',  #顯示文字計息
-                        data='action=buy'  #Postback資料
-                    ),
+                    
                 ]
             )
         )
@@ -34,99 +30,48 @@ def sendButton(event):  #按鈕樣版
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendConfirm(event):  #確認樣板
+def sendConfirm(event):  #董監事資料
     try:
         message = TemplateSendMessage(
-            alt_text='確認樣板',
+            alt_text='董監事資料',
             template=ConfirmTemplate(
-                text='你確定要購買這項商品嗎？',
-                actions=[
-                    MessageTemplateAction(  #按鈕選項
-                        label='是',
-                        text='@yes'
-                    ),
-                    MessageTemplateAction(
-                        label='否',
-                        text='@no'
-                    )
-                ]
+                uri='https://super3000.herokuapp.com/listall/'
+            
             )
         )
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendCarousel(event):  #轉盤樣板
+def sendCarousel(event):  #經濟部商業司相關網站
     try:
-        message = TemplateSendMessage(
-            alt_text='轉盤樣板',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
-                        actions=[
-                            MessageTemplateAction(
-                                label='文字訊息一',
-                                text='賣披薩'
-                            ),
-                            URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
-                            ),
-                            PostbackTemplateAction(
-                                label='回傳訊息一',
-                                data='action=sell&item=披薩'
-                            ),
-                        ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
-                        title='這是樣板二',
-                        text='第二個轉盤樣板',
-                        actions=[
-                            MessageTemplateAction(
-                                label='文字訊息二',
-                                text='賣飲料'
-                            ),
-                            URITemplateAction(
-                                label='連結台大網頁',
-                                uri='http://www.ntu.edu.tw'
-                            ),
-                            PostbackTemplateAction(
-                                label='回傳訊息二',
-                                data='action=sell&item=飲料'
-                            ),
-                        ]
-                    )
-                ]
-            )
+        message = TextSendMessage(
+            text = '利害關係人相關網頁'
+            uri='https://corp.104.com.tw/indexdda3.html?m=article&mid=102'
         )
+        
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendImgCarousel(event):  #圖片轉盤
+def sendImgCarousel(event):  #金融相關網站
     try:
         message = TemplateSendMessage(
-            alt_text='圖片轉盤樣板',
-            template=ImageCarouselTemplate(
-                columns=[
-                    ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
-                        action=MessageTemplateAction(
-                            label='文字訊息',
-                            text='賣披薩'
-                        )
+            alt_text='金融相關網站',
+            template=ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',  #顯示的圖片
+                title='金融相關網站',  #主標題
+                text='請選擇：',  #副標題
+                actions=[
+                    URITemplateAction(  #開啟網頁
+                        label='金管會',
+                        uri='https://www.fsc.gov.tw/ch/index.jsp'
                     ),
-                    ImageCarouselColumn(
-                        image_url='https://i.imgur.com/qaAdBkR.png',
-                        action=PostbackTemplateAction(
-                            label='回傳訊息',
-                            data='action=sell&item=飲料'
-                        )
-                    )
+                    URITemplateAction(  #開啟網頁
+                        label='證券期貨局',
+                        uri='https://www.sfb.gov.tw/ch/home.jsp?id=882&parentpath=0,8'
+                    ),
+                    
                 ]
             )
         )
@@ -137,38 +82,27 @@ def sendImgCarousel(event):  #圖片轉盤
 def sendPizza(event):
     try:
         message = TextSendMessage(
-            text = '感謝您購買披薩，我們將盡快為您製作。'
+            text='請選擇想查詢之商業司相關網站',
+            quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton(
+                        action=MessageAction(label="商工行政服務相關網站入口網", uri='https://gcis.nat.gov.tw/mainNew/index.jsp')
+                    ),
+                    QuickReplyButton(
+                        action=MessageAction(label="商工登記公示資料查詢服務", uri='https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do')
+                    ),
+                    QuickReplyButton(
+                        action=MessageAction(label="縣市別與近十年度公司設立登記案件統計", uri='https://serv.gcis.nat.gov.tw/StatisticQry/cmpy/StaticFunction4.jsp')
+                    ),
+                    
+                ]
+            )
         )
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendYes(event):
-    try:
-        message = TextSendMessage(
-            text='感謝您的購買，\n我們將盡快寄出商品。',
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendBack_buy(event, backdata):  #處理Postback
-    try:
-        text1 = '感謝您購買披薩，我們將盡快為您製作。\n(action 的值為 ' + backdata.get('action') + ')'
-        text1 += '\n(可將處理程式寫在此處。)'
-        message = TextSendMessage(  #傳送文字
-            text = text1
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendBack_sell(event, backdata):  #處理Postback
-    try:
-        message = TextSendMessage(  #傳送文字
-            text = '點選的是賣 ' + backdata.get('item')
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+
 
