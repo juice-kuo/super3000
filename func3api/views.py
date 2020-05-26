@@ -27,19 +27,19 @@ def callback(request):
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
                     mtext = event.message.text
-                    if mtext == '@按鈕樣板':
+                    if mtext == '@關於我們':
                         func.sendButton(event)
     
-                    elif mtext == '@確認樣板':
+                    elif mtext == '@董監事資料':
                         func.sendConfirm(event)
     
-                    elif mtext == '@轉盤樣板':
+                    elif mtext == '@公司利害關係人相關網站':
                         func.sendCarousel(event)
     
-                    elif mtext == '@圖片轉盤':
+                    elif mtext == '@金融相關網站':
                         func.sendImgCarousel(event)
     
-                    elif mtext == '@購買披薩':
+                    elif mtext == '@經濟部商業司相關網站':
                         func.sendPizza(event)
     
                     elif mtext == '@yes':
