@@ -29,10 +29,7 @@ def callback(request):
                     mtext = event.message.text
                     if mtext == '@關於我們':
                         func.sendButton(event)
-    
-                    elif mtext == '@董監事資料':
-                        func.sendConfirm(event)
-    
+
                     elif mtext == '@公司利害關係人相關網站':
                         func.sendCarousel(event)
     
