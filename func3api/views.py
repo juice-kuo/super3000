@@ -42,8 +42,7 @@ def callback(request):
                     elif mtext == '@經濟部商業司相關網站':
                         func.sendPizza(event)
     
-                    elif mtext == '@yes':
-                        func.sendYes(event)
+                    
     
             if isinstance(event, PostbackEvent):  #PostbackTemplateAction觸發此事件
                 backdata = dict(parse_qsl(event.postback.data))  #取得Postback資料
