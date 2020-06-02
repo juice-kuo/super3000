@@ -10,7 +10,7 @@ def sendButton(event):  #關於我們
         message = TemplateSendMessage(
             alt_text='關於我們',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://imgur.com/qUCe1UF',  #顯示的圖片
+                thumbnail_image_url='https://i.imgur.com/qUCe1UF.png',  #顯示的圖片
                 title='關於我們',  #主標題
                 text='請選擇：',  #副標題
                 actions=[
