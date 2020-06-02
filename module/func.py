@@ -50,7 +50,7 @@ def sendImgCarousel(event):  #金融相關網站
         message = TemplateSendMessage(
             alt_text='金融相關網站',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://imgur.com/FK3SGJz',  #顯示的圖片
+                thumbnail_image_url='https://i.imgur.com/FK3SGJz.png',  #顯示的圖片
                 title='金融相關網站',  #主標題
                 text='請選擇：',  #副標題
                 actions=[
