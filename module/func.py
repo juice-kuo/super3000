@@ -73,23 +73,25 @@ def sendImgCarousel(event):  #金融相關網站
 def sendPizza(event):
     try:
         message = TextSendMessage(
-            text='請選擇想查詢之商業司相關網站',
+            text='請選擇最喜歡的程式語言',
             quick_reply=QuickReply(
                 items=[
                     QuickReplyButton(
-                        action=MessageAction(label="商工行政服務相關網站入口網", text="https://gcis.nat.gov.tw/mainNew/index.jsp")
+                        action=MessageAction(label="Python", text="Python")
                     ),
                     QuickReplyButton(
-                        action=MessageAction(label="商工登記公示資料查詢服務", text="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do")
+                        action=MessageAction(label="Java", text="Java")
                     ),
                     QuickReplyButton(
-                        action=MessageAction(label="縣市別與近十年度公司設立登記案件統計", text="https://serv.gcis.nat.gov.tw/StatisticQry/cmpy/StaticFunction4.jsp")
+                        action=MessageAction(label="C#", text="C#")
                     ),
-                    
+                    QuickReplyButton(
+                        action=MessageAction(label="Basic", text="Basic")
+                    ),
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
