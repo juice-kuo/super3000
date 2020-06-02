@@ -77,13 +77,13 @@ def sendPizza(event):
             quick_reply=QuickReply(
                 items=[
                     QuickReplyButton(
-                        action=MessageAction(label="商工行政服務相關網站入口網", uri='https://gcis.nat.gov.tw/mainNew/index.jsp')
+                        action=MessageAction(label="商工行政服務相關網站入口網", text="https://gcis.nat.gov.tw/mainNew/index.jsp")
                     ),
                     QuickReplyButton(
-                        action=MessageAction(label="商工登記公示資料查詢服務", uri='https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do')
+                        action=MessageAction(label="商工登記公示資料查詢服務", text="https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do")
                     ),
                     QuickReplyButton(
-                        action=MessageAction(label="縣市別與近十年度公司設立登記案件統計", uri='https://serv.gcis.nat.gov.tw/StatisticQry/cmpy/StaticFunction4.jsp')
+                        action=MessageAction(label="縣市別與近十年度公司設立登記案件統計", text="https://serv.gcis.nat.gov.tw/StatisticQry/cmpy/StaticFunction4.jsp")
                     ),
                     
                 ]
