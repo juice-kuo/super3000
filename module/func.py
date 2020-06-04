@@ -5,6 +5,8 @@ from linebot.models import TextSendMessage, TemplateSendMessage, ConfirmTemplate
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 
+baseurl = 'https://students08176031.herokuapp.com/static/web'
+
 def sendButton(event):  #關於我們
     try:
         message = TemplateSendMessage(
