@@ -5,14 +5,14 @@ from linebot.models import TextSendMessage, TemplateSendMessage, ConfirmTemplate
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 
-baseurl = 'https://students08176031.herokuapp.com/static/web'
-
+baseurl = 'https://students08176031.herokuapp.com/static/images/TemplateSendMessage/'
+#'https://i.imgur.com/qUCe1UF.png'
 def sendButton(event):  #關於我們
     try:
         message = TemplateSendMessage(
             alt_text='關於我們',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/qUCe1UF.png',  #顯示的圖片
+                thumbnail_image_url=baseurl + '.png',  #顯示的圖片
                 title='關於我們',  #主標題
                 text='請選擇：',  #副標題
                 actions=[
