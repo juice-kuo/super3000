@@ -13,7 +13,7 @@ def sendButton(event):  #關於我們
         message = TemplateSendMessage(
             alt_text='關於我們',
             template=ButtonsTemplate(
-                thumbnail_image_url='http://120.125.72.233/~survey/static_images/asisline.png',  #顯示的圖片
+                thumbnail_image_url=baseurl + 'asisline.png',  #顯示的圖片
                 title='關於我們',  #主標題
                 text='請選擇：',  #副標題
                 actions=[
