@@ -6,7 +6,7 @@ from linebot.models import TextSendMessage, TemplateSendMessage, ConfirmTemplate
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 #https://raw.githubusercontent.com/juice-kuo/super3000/master/static/images/TemplateSendMessage/
 #http://120.125.72.233/~survey/static_images/
-baseurl = 'https://raw.githubusercontent.com/juice-kuo/super3000/master/static/images/TemplateSendMessage/'
+baseurl = 'http://120.125.72.233/~survey/static_images/'
 #'https://i.imgur.com/qUCe1UF.png'
 def sendButton(event):  #關於我們
     try:
