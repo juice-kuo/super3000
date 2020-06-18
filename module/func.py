@@ -9,7 +9,7 @@ line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 baseurl = 'http://120.125.72.233/~survey/static_images/'
 #'https://i.imgur.com/qUCe1UF.png'
 def sendButton(event):  #關於我們
-    try:
+    
         message = TemplateSendMessage(
             alt_text='關於我們',
             template=ButtonsTemplate(
@@ -30,12 +30,9 @@ def sendButton(event):  #關於我們
             )
         )
         line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
-
+    
 def sendCarousel(event):  #經濟部商業司相關網站
-    try:
+    
         message = [
             TextSendMessage(
                 text = '利害關係人相關網頁'
@@ -45,11 +42,9 @@ def sendCarousel(event):  #經濟部商業司相關網站
             ),
         ]
         line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
+    
 def sendImgCarousel(event):  #金融相關網站
-    try:
+    
         message = TemplateSendMessage(
             alt_text='金融相關網站',
             template=ButtonsTemplate(
@@ -70,9 +65,7 @@ def sendImgCarousel(event):  #金融相關網站
             )
         )
         line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
+    
 def sendPizza(event):
 
         message = TextSendMessage(
