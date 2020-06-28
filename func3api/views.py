@@ -8,7 +8,7 @@ from linebot.models import MessageEvent, TextMessage, PostbackEvent
 from module import func
 from urllib.parse import parse_qsl
 
-from super.models import company
+from func3api.models import company
 from django.db.models import Q
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
