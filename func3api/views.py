@@ -10,6 +10,7 @@ from urllib.parse import parse_qsl
 
 from func3api.models import company
 from django.db.models import Q
+from django.shortcuts import render
 
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 parser = WebhookParser(settings.LINE_CHANNEL_SECRET)
