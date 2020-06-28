@@ -8,7 +8,7 @@ from linebot.models import MessageEvent, TextMessage, PostbackEvent
 from module import func
 from urllib.parse import parse_qsl
 
-from func3api.models import company
+from super.models import company
 from django.db.models import Q
 from django.shortcuts import render
 
