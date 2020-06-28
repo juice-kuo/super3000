@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from func3api import views
+#from func3api import views
+from super import views
 
 urlpatterns = [
     url('^callback', views.callback),
