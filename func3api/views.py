@@ -52,3 +52,14 @@ def callback(request):
 
     else:
         return HttpResponseBadRequest()
+    
+def selecct_list(request):
+	cComid = request.POST.get('cComid',False)
+	cPosition = request.POST.get('cPosition',False)
+	cName = request.POST.get('cName',False)
+	cSharemoney = request.POST.get('cSharemoney',False)
+	if cSharemoney == '0':
+		select_all = company.objects.filter( Q(cComid__icontains=cComid) & Q(cPosition__icontains=cPosition) & Q(cSharemoney__icontains=cSharemoney))
+	else:
+		select_all = company.objects.filter( Q(cComid__icontains=cComid) & Q(cPosition__icontains=cPosition) & Q(cSharemoney=cSharemoney))
+	return render(request,'select_all.html', {'select_all': select_all})
