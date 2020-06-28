@@ -21,4 +21,5 @@ from func3api import views
 urlpatterns = [
     url('^callback', views.callback),
     path('admin/', admin.site.urls),
+    path('select_list/',views.selecct_list),
 ]
